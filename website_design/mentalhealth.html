@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Health Awareness</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #e3f2fd, #fff3e0);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            background-color: rgba(193, 225, 246, 0.741);
+            color: #fff;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(34, 33, 33, 0.2);
+            padding: 10px 0;
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar a {
+            color: #0a0a0a;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            color: #ffcc80;
+        }
+
+        /* Header Styles */
+        .header {
+            position: relative;
+            text-align: center;
+            padding: 10px 0;
+            color: #fff;
+            background:rgba(255, 255, 255, 0.8);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            margin-top: 50px;
+            /* Account for navbar height */
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://source.unsplash.com/1600x900/?mental-health,wellness') center/cover no-repeat;
+            z-index: -1;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.8);
+            z-index: 0;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            animation: slideIn 1s ease-in-out;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header p {
+            font-size: 1.5rem;
+            animation: fadeIn 2s ease-in-out 1s forwards;
+            opacity: 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        @keyframes slideIn {
+
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Introduction Section Styles */
+        .introduction {
+            padding: 60px 0;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin: 40px 20px;
+        }
+
+        .introduction h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        .introduction p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            animation: textPopUp 1s ease-in-out;
+        }
+
+        .introduction::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            width: 60px;
+            height: 60px;
+            background: url('https://source.unsplash.com/60x60/?brain') center/cover no-repeat;
+            border-radius: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        @keyframes textPopUp {
+
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Effects of Mental Health Styles */
+        .effects {
+            padding: 60px 0;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin: 40px 20px;
+        }
+
+        .effects h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .effects p {
+            font-size: 1.1rem;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .effects ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin: 0;
+        }
+
+        .effects ul li {
+            width: calc(33.333% - 20px);
+            background: #f4f4f4;
+            margin: 10px;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            animation: effectFadeIn 0.6s ease-out;
+        }
+
+        .effects ul li:hover {
+            transform: translateY(-10px);
+            background-color: #e0f7fa;
+        }
+
+        @keyframes effectFadeIn {
+
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .effects img {
+            max-width: 30%;
+            height: auto;
+            display: block;
+            margin: 30px auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Chasing Mental Health Styles */
+        .chasing-health {
+            padding: 60px 0;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin: 40px 20px;
+        }
+
+        .chasing-health h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .chasing-health p {
+            font-size: 1.1rem;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .chasing-health .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .chasing-health .card {
+            width: calc(33.333% - 20px);
+            background-color: #ffffff;
+            margin: 10px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            animation: cardPopIn 0.6s ease-out;
+        }
+
+        .chasing-health .card:hover {
+            transform: translateY(-10px);
+            background-color: #dcedc8;
+        }
+
+        .chasing-health .card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .chasing-health .card p {
+            font-size: 1rem;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .chasing-health img {
+            max-width: 40%;
+            height: auto;
+            display: block;
+            margin: 30px auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        @keyframes cardPopIn {
+
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Visual Content Styles */
+        .visual-content {
+            padding: 60px 0;
+            background-color: #daddde;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin: 40px 20px;
+        }
+
+        .visual-content h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .image-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-bottom: 40px;
+        }
+
+        .image-gallery img {
+            width: calc(33.333% - 20px);
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .image-gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        .video-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .video-gallery video {
+            width: calc(50% - 20px);
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Social Media Content Styles */
+        .social-media {
+            padding: 60px 0;
+            background-color: #daddde;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin: 40px 20px;
+        }
+
+        .social-media h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .social-media p {
+            font-size: 1.1rem;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .social-media ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .social-media li {
+            margin: 0 10px;
+        }
+
+        .social-media a {
+            text-decoration: none;
+            color: #4a90e2;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .social-media a:hover {
+            color: #333;
+        }
+
+        /* Footer Styles */
+        .footer {
+            background-color: #daddde;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .footer p {
+            margin: 0;
+            color: #333;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .effects ul li,
+            .chasing-health .card {
+                width: calc(50% - 20px);
+            }
+
+            .header h1 {
+                font-size: 2.5rem;
+            }
+
+            .header p {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .effects ul li,
+            .chasing-health .card {
+                width: calc(100% - 20px);
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .header p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="navbar-brand">Home</a>
+            <div class="navbar-links">
+                <a href="#introduction">Introduction</a>
+                <a href="#effects">Effects</a>
+                <a href="#chasing-health">Chasing Health</a>
+                <a href="#visual-content">Visual Content</a>
+                <a href="#social-media">Social Media</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="header" id="home">
+        <div class="container">
+            <h1>Mental Health Awareness</h1>
+            <p>Understanding, Coping, and Thriving</p>
+        </div>
+    </header>
+
+    <!-- Introduction Section -->
+    <section class="introduction" id="introduction">
+        <div class="container">
+            <h2>Introduction</h2>
+            <p>Mental health is a vital component of overall well-being, affecting how we think, feel, and act. It plays
+                a crucial role in handling stress, relating to others, and making decisions. Prioritizing mental health
+                leads to a balanced and fulfilling life.</p>
+        </div>
+    </section>
+
+    <!-- Effects of Mental Health -->
+    <section class="effects" id="effects">
+        <div class="container">
+            <h2>Effects of Mental Health</h2>
+            <p>Mental health issues can manifest in various ways, impacting both physical and emotional states. Some
+                common effects include:</p>
+            <ul>
+                <li>Chronic stress and anxiety</li>
+                <li>Depression and mood swings</li>
+                <li>Difficulty concentrating and making decisions</li>
+                <li>Physical symptoms such as fatigue and headaches</li>
+                <li>Social withdrawal and relationship issues</li>
+            </ul>
+            <img src="images/mentalhealth/Default_mental_health_2.png" alt="Mental Health Effects">
+        </div>
+    </section>
+
+    <!-- Chasing Mental Health -->
+    <section class="chasing-health" id="chasing-health">
+        <div class="container">
+            <h2>Chasing Mental Health</h2>
+            <p>Maintaining good mental health requires intentional efforts and lifestyle changes. Here are some
+                effective strategies:</p>
+            <div class="card-container">
+                <div class="card">
+                    <h3>Mindfulness & Meditation</h3>
+                    <p>Practice mindfulness and meditation to stay present.</p>
+                </div>
+                <div class="card">
+                    <h3>Regular Physical Activity</h3>
+                    <p>Engage in regular physical activity to boost mood.</p>
+                </div>
+                <div class="card">
+                    <h3>Connect with Loved Ones</h3>
+                    <p>Connect with friends and family for support.</p>
+                </div>
+                <div class="card">
+                    <h3>Set Goals</h3>
+                    <p>Establish a routine and set achievable goals.</p>
+                </div>
+                <div class="card">
+                    <h3>Professional Help</h3>
+                    <p>Seek professional help when needed.</p>
+                </div>
+            </div>
+            <img src="images/mentalhealth/imageforth.png" alt="Mental Health Practices">
+        </div>
+    </section>
+
+    <!-- Visual Content -->
+    <section class="visual-content" id="visual-content">
+        <div class="container">
+            <h2>Visual Content</h2>
+            <div class="image-gallery">
+                <img src="images/mentalhealth/imageone.jpg" alt="Mindfulness Meditation">
+                <img src="images/mentalhealth/imagesecond.jpeg" alt="Exercise and Well-being">
+                <img src="images/mentalhealth/imagethird.jpeg" alt="Supportive Community">
+            </div>
+            <div class="video-gallery">
+                <video controls>
+                    <source src="images/mentalhealth/2796307-uhd_3840_2160_25fps.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <video controls>
+                    <source src="images/mentalhealth/3125907-uhd_3840_2160_25fps.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Media Content -->
+    <section class="social-media" id="social-media">
+        <div class="container">
+            <h2>Social Media Content</h2>
+            <p>Follow these mental health advocates for insightful articles and discussions:</p>
+            <ul>
+                <li><a href="https://twitter.com/mentalhealth" target="_blank">Mental Health Twitter</a></li>
+                <li><a href="https://www.facebook.com/mentalhealth" target="_blank">Mental Health Facebook</a></li>
+                <li><a href="https://www.instagram.com/mentalhealth" target="_blank">Mental Health Instagram</a></li>
+                <li><a href="https://www.linkedin.com/mentalhealth" target="_blank">Mental Health LinkedIn</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Mental Health Awareness. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

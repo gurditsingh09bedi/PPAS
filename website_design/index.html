@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>PPAS</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+
+    <link rel="stylesheet" href="css/aos.css">
+
+    <link rel="stylesheet" href="css/ionicons.min.css">
+    
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/style.css">
+
+
+
+<style>
+
+/*======================================
+//--//-->   ABOUT
+======================================*/
+
+/* General Box Shadow and Padding for About Section */
+.about-mf .box-shadow-full {
+  padding: 4rem 2rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  background: #c23c3c;
+  border-radius: 10px;
+}
+
+/* About Image Styling */
+.about-mf .about-img {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.about-mf .about-img img {
+  border-radius: 50%;
+  box-shadow: 0 1px 15px rgba(0, 0, 0, 0.1);
+  margin-left: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.about-mf .about-img img:hover {
+  transform: scale(1.05);
+}
+
+/* Skills Section Progress Bar */
+.skill-mf .progress {
+  margin: 0.5rem 0 1.2rem 0;
+  border-radius: 10px;
+  height: 0.7rem;
+  background: #2a281d;
+}
+
+.skill-mf .progress .progress-bar {
+  height: 0.7rem;
+  background: linear-gradient(90deg, #3fd660, #35ac20);
+  border-radius: 10px;
+  transition: width 0.6s ease;
+}
+
+/* Typing Animation Styles */
+#typing-animation {
+  position: relative;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 3s steps(20, end) infinite, blink-caret 0.75s step-end infinite;
+  border-right: 0.1em solid #333;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: #f0e2e2; }
+}
+
+/* Project Image Zoom Effect */
+.zoom-effect {
+  overflow: hidden;
+  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+  border-radius: 10px;
+}
+
+.zoom-effect:hover {
+  transform: scale(1.1);
+  box-shadow: 0 15px 30px rgba(232, 7, 7, 0.2);
+}
+
+
+</style>
+
+
+  </head>
+  <body class="light-background",data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+	  
+	  
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
+	    <div class="container">
+	      <a class="navbar-brand" href="index.html">PPAS</a>
+	      <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="oi oi-menu"></span> Menu
+	      </button>
+
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav nav ml-auto">
+	          <li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
+	          <li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
+	          <li class="nav-item"><a href="http://10.195.134.54:8506" class="nav-link"><span>Book an Appointment </span></a></li>
+	          <li class="nav-item"><a href="#project-section" class="nav-link"><span>Projects</span></a></li>
+	          <li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
+	  <section id="home-section" class="hero">
+		  <div class="home-slider  owl-carousel">
+	       <div class="slider-item ">
+	      	<div class="overlay"></div>
+	         <div class="container">
+	          <div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end" data-scrollax-parent="true">
+				<div class="one-third js-fullheight order-md-last img" style="background-image:url(images/image1.png)">
+	          	 <div class="overlay"></div>
+	          	</div>
+		          <div class="one-forth d-flex  align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
+		          	<div class="text">
+		          		<span class="subheading">Life is short, and it's up to you to make it sweet.</span>
+			            <h1 class="mb-4 mt-3">Your Presence is Heaven For Someone<span> You Matter </span></h1>
+
+						<!-- Element to contain animated typing -->
+						<span id="typing-animation"></span>
+
+						<script>
+
+						// Initialize the typing animation
+						const typingAnimationElement = document.getElementById('typing-animation');
+
+						// Create an array of typing text
+						const typingTexts = [
+						'Human Life Core Value  ',
+						'Caring for Human Lives  ',
+						'Medicines Primary Focus   ',
+						'Every Life Matters in Medicine',
+						'Medical Care for Every Life'
+
+						];
+
+						// Create a function to display the typing animation for a given text
+						function playTypingAnimation(text) {
+						// Loop through each character and add it to the element
+						for (let i = 0; i < text.length; i++) {
+							setTimeout(() => {
+							typingAnimationElement.textContent += text[i];
+							}, i * 200); // Increase the delay to slow down the typing animation
+						}
+
+						// Once the animation is complete, reset the text and start over
+						setTimeout(() => {
+							typingAnimationElement.textContent = '';
+							playTypingAnimation(typingTexts[(typingTexts.indexOf(text) + 1) % typingTexts.length]);
+						}, text.length * 200);
+						}
+
+						// Start the typing animation loop
+						playTypingAnimation(typingTexts[0]);
+
+						</script>
+
+						<br>
+						<br>
+			            <h2>Precision Physician Allocation System</h2>
+						<!-- <h2 class="d-flex" style="margin-bottom: 0">With over 5 years of experience</h2> -->
+						<!-- <br> -->
+			            <p><a href="mentalhealth.html" class="btn btn-primary py-3 px-4">MentalHealth</a>
+							<a href="second.html" class="btn btn-primary py-3 px-4">Pregnancy</a>
+							<a href="https://github.com/gurditsingh09bedi?tab=repositories" class="btn btn-white btn-outline-white py-3 px-4">Life </a></p>
+		            </div>
+		          </div>
+	        	</div>
+	        </div>
+	      </div>
+		</div>
+    </section>
+
+
+
+    <section class="ftco-about img ftco-section ftco-no-pb" id="about-section">
+    	<div class="container">
+			<div class="row">
+				<div class="row d-flex align-items-stretch">
+				<!-- <div class="row d-flex"> -->
+					<div class="col-md-6 col-lg-5 d-flex">
+						<div class="img-about img d-flex align-items-stretch">
+							<div class="overlay">
+								<div class="row">
+									<div class="col-sm-6 col-md-5">
+									  <div class="about-img">
+										<img src="images/model2.png" class="img-fluid rounded b-shadow-a" alt="">
+									  </div>
+									</div>
+									<!-- Details next to profile image -->
+									<div class="col-sm-6 col-md-7">
+									  <div class="about-info">
+										<p style="display: inline; white-space: nowrap;"><span class="title-s">Hey, There</span><span>..!</span></p>
+  										<p style="display: inline; white-space: nowrap;"><span class="title-s">I'm your </span><span>AI Assistance</span></p>
+  										<p style="display: inline; white-space: nowrap;"><span class="title-s">Name: </span><span>Cypheria</span></p>
+										<p style="display: inline; white-space: nowrap;"><span class="title-s">I can help you </span><span>to book an Appointment</span></p>
+										<p style="display: inline; white-space: nowrap;"><span class="title-s">Please click on below mention link</span></p>
+										<p class="nav-item"><a href="http://10.195.134.54:8506" class="nav-link"><span>Click Here 🔎 </span></a></p>
+									  </div>
+									</div>
+								  </div>
+
+								<div class="skill-mf">
+									<p class="title-s">Medical statistics</p>
+									<span>Operating GP Branches in the UK</span> <span class="pull-right">90%</span>
+									<div class="progress">
+										<div class="progress-bar" role="progressbar" style="width: 95%;" aria-valuenow="95" aria-valuemin="0"
+											aria-valuemax="100"></div>
+									</div>
+									
+									<span>Total A&E (including Types 1, 2, 3, and 4) is</span> <span class="pull-right">505</span>
+									<div class="progress">
+										<div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0"
+											aria-valuemax="100"></div>
+									</div>
+									
+									<span>Total number of Doctor approximately is</span> <span class="pull-right">300,000</span>
+									<div class="progress">
+										<div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0"
+											aria-valuemax="100"></div>
+									</div>
+									
+									<span>Total number of Ambulances approximately is</span> <span class="pull-right">5000</span>
+									<div class="progress">
+										<div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0"
+											aria-valuemax="100"></div>
+									</div>
+									
+									<span>NHS Budget Approximately is</span> <span class="pull-right">£160 billion</span>
+									<div class="progress">
+										<div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0"
+											aria-valuemax="100"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="col-md-6 col-lg-7 pl-lg-5 pb-5">
+						<div class="row justify-content-start pb-3">
+							<div class="col-md-12 heading-section ftco-animate">
+								
+								<h1 class="big">About</h1>
+								<h2 class="mb-4">About PPAS</h2>
+								
+								<p> PPAS (Precision Physician Allocation System) is an advanced healthcare platform designed to optimize physician scheduling and resource allocation.The PPAS website emphasizes its dedication to personalized patient care and efficient appointment management. By utilizing real-time data and user-friendly interfaces, PPAS significantly enhances patient satisfaction and operational efficiency. </p>
+								<ul class="about-info mt-4 px-md-0 px-2">
+									<li class="d-flex"><span>Custom Care Plans:</span> <span> PPAS tailors healthcare experiences to individual patient needs, ensuring personalized care pathways that enhance patient satisfaction and outcomes.</span></li>
+									<li class="d-flex"><span>Efficient Appointment Management:</span> <span> It streamlines scheduling with real-time availability and automated reminders, reducing no-shows and optimizing clinic schedules.</span></li>
+									<li class="d-flex"><span>Improved Healthcare Outcomes:</span> <span>Provides continuous patient monitoring and incorporates feedback to enhance care delivery and manage chronic conditions effectively.</span></li>
+									<li class="d-flex"><span>Data-Driven Decision Making:</span> <span>Utilizes advanced analytics and machine learning to make informed decisions, optimizing resource allocation and improving care quality.</span></li>
+
+									
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+    </section>   
+
+    <section class="ftco-section" id="project-section">
+      <div class="container">
+        <div class="row justify-content-center mb-5 pb-5">
+          <div class="col-md-7 heading-section text-center ftco-animate">
+            <h1 class="big big-2">Projects</h1>
+            <h2 class="mb-4">Projects</h2>
+            <p>Below are the sample of the Project run by the UK Medical Department</p>
+          </div>
+        </div>
+        <div class="row d-flex">
+          <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry justify-content-end">
+              <a href="https://www.nhs.uk/health-assessment-tools/calculate-your-heart-age" class="block-20 zoom-effect" style="background-image: url('images/200585.jpg');">
+              </a>
+              <div class="text mt-3 float-right d-block">
+
+                <h3 class="heading"><a href="https://www.nhs.uk/health-assessment-tools/calculate-your-heart-age">Managing heart failure</a></h3>
+                <p>This calculator will compare your real age to your heart age by asking you questions about your health. You'll also find out how to improve your heart age by making some healthy lifestyle changes.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry justify-content-end">
+              <a href="https://www.intersystems.com/uk/intersystems-iris-for-health-demo/?utm_term=nhs%20interoperability&utm_campaign=bm_search_uk_ih_hl_technical&utm_source=adwords&utm_medium=ppc&hsa_acc=6647022432&hsa_cam=20144355587&hsa_grp=150026276158&hsa_ad=677008556781&hsa_src=g&hsa_tgt=kwd-926572587523&hsa_kw=nhs%20interoperability&hsa_mt=p&hsa_net=adwords&hsa_ver=3&gad_source=1&gclid=CjwKCAjwk8e1BhALEiwAc8MHiAf2YH9OsqP96-MmXZKv9-c5GYEi8qAnps0ScLR5ucuXqilG4oLRnBoC9K8QAvD_BwE" class="block-20 zoom-effect" style="background-image: url('images/tttt.webp');">
+              </a>
+              <div class="text mt-3 float-right d-block">
+
+                <h3 class="heading"><a href="https://www.intersystems.com/uk/intersystems-iris-for-health-demo/?utm_term=nhs%20interoperability&utm_campaign=bm_search_uk_ih_hl_technical&utm_source=adwords&utm_medium=ppc&hsa_acc=6647022432&hsa_cam=20144355587&hsa_grp=150026276158&hsa_ad=677008556781&hsa_src=g&hsa_tgt=kwd-926572587523&hsa_kw=nhs%20interoperability&hsa_mt=p&hsa_net=adwords&hsa_ver=3&gad_source=1&gclid=CjwKCAjwk8e1BhALEiwAc8MHiAf2YH9OsqP96-MmXZKv9-c5GYEi8qAnps0ScLR5ucuXqilG4oLRnBoC9K8QAvD_BwE">Interoperable Health Information Exchange (HIE) System</a></h3>
+                <p>Solve your Healthcare Data Integration Challenges with InterSystems IRIS for Health</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry">
+              <a href="https://www.england.nhs.uk/integratedcare/resources/case-studies/integrated-care-in-action-mental-health/" class="block-20 zoom-effect" style="background-image: url('images/INTEGRATION.jpg.jpeg');">
+              </a>
+              <div class="text mt-3 float-right d-block">
+
+                <h3 class="heading"><a href="https://www.england.nhs.uk/integratedcare/resources/case-studies/integrated-care-in-action-mental-health/">Integrated Mental Health Support System</a></h3>
+                <p>Develop a comprehensive mental health support system that integrates digital tools, community resources, and healthcare services to provide holistic mental health care.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+	<br>
+		<!-- added justify-content-center to center align the last two projects -->
+		<div class="row d-flex justify-content-center">  
+			<div class="col-md-4 d-flex ftco-animate">
+				<div class="blog-entry justify-content-end">
+				<a href="https://www.england.nhs.uk/greenernhs/#:~:text=The%20Greener%20NHS%20programme%20will,and%20reach%20net%20carbon%20zero." class="block-20 zoom-effect" style="background-image: url('images/environ_sustain_healthcare_Banner-mobile.png');">
+				</a>
+				<div class="text mt-3 float-right d-block">
+  
+				  <h3 class="heading"><a href="https://www.england.nhs.uk/greenernhs/#:~:text=The%20Greener%20NHS%20programme%20will,and%20reach%20net%20carbon%20zero.">Sustainable Healthcare Infrastructure Program</a></h3>
+				  <p>Develop a program focused on creating sustainable healthcare facilities and practices that reduce environmental impact and promote health and well-being.</p>
+				</div>
+			  </div>
+			</div>
+			<div class="col-md-4 d-flex ftco-animate">
+				<div class="blog-entry justify-content-end">
+				<a href="https://digital.nhs.uk/services/digital-staff-passport" class="block-20 zoom-effect" style="background-image: url('images/nhs.jpg');">
+				</a>
+				<div class="text mt-3 float-right d-block">
+  
+				  <h3 class="heading"><a href="https://digital.nhs.uk/services/digital-staff-passport">NHS Digital Health Passport</a></h3>
+				  <p>Develop a digital health passport that provides patients with easy access to their comprehensive health information and facilitates seamless healthcare interactions across various services. </p>
+				</div>
+			  </div>
+			</div>
+		 </div>
+	  </div>
+    </section>
+
+	<section class="ftco-section ftco-no-pt ftco-no-pb ftco-counter img" id="section-counter">
+      <div class="container">
+		<div class="row d-md-flex align-items-center">
+          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+            <div class="block-18">
+              <div class="text">
+                
+                <span>Milestones</span>
+				<span>& Innovations</span>
+				<span>Achievements</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+            <div class="block-18">
+              <div class="text">
+                <strong class="number" data-number="1925">0</strong>
+                <span>Projects</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+            <div class="block-18">
+              <div class="text">
+                <strong class="number" data-number="15000">0</strong>
+                <span>Publish Research</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+            <div class="block-18">
+              <div class="text">
+                <strong class="number" data-number="1200">0</strong>
+                <span>Technical Event</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+	
+	  <div class="ftco-section ftco-hireme img margin-top" style="background-image: url(images/this-is-for-my-portfolio-website-can-you-give-my-face-a-v0-zy5pnnjulh9c1.png)">
+			<!-- <div class="container"> -->
+				<div class="row justify-content-center">
+					<div class="col-md-7 ftco-animate text-center">
+						<h2>More projects on </h2>
+						<div class="heading"> <h4> The UK Medical Department has implemented key projects such as the Electronic Prescription Service (EPS), which streamlines prescription processes, and the NHS App, offering patients easy access to healthcare services. NHS Test and Trace manages COVID-19 by identifying cases quickly, while Integrated Care Systems (ICS) improve collaboration between providers for enhanced patient care. </h4>
+
+					</div>
+				</div>
+			<!-- </div> -->
+		</div>
+	</section>
+
+
+
+    <section class="ftco-section contact-section ftco-no-pb" id="contact-section">
+      <div class="container">
+      	<div class="row justify-content-center mb-5 pb-3">
+          <div class="col-md-7 heading-section text-center ftco-animate">
+            <h1 class="big big-2">Contact</h1>
+            <h2 class="mb-4">Contact Me</h2>
+            <p>Below are the details to reach out to me!</p>
+          </div>
+        </div>
+
+        <div class="row d-flex contact-info mb-5">
+          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
+          	<div class="align-self-stretch box p-4 text-center">
+          		<div class="icon d-flex align-items-center justify-content-center">
+          			<span class="icon-map-signs"></span>
+          		</div>
+          		<h3 class="mb-4">Address</h3>
+	            <h5>Birmingham, UK</h5>
+	          </div>
+          </div>
+          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
+          	<div class="align-self-stretch box p-4 text-center">
+          		<div class="icon d-flex align-items-center justify-content-center">
+          			<span class="icon-phone2"></span>
+          		</div>
+          		<h3 class="mb-4">Contact Number</h3>
+	            <p><a href="tel://0101010101">+44 7778 233556</a></p>
+	          </div>
+          </div>
+          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
+          	<div class="align-self-stretch box p-4 text-center">
+          		<div class="icon d-flex align-items-center justify-content-center">
+          			<span class="icon-paper-plane"></span>
+          		</div>
+          		<h3 class="mb-4">Email Address</h3>
+	            <p><a href="mailto:info@yoursite.com">gurditsingh09bedi@gmail.com</a></p>
+	          </div>
+          </div>
+          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
+          	<div class="align-self-stretch box p-4 text-center">
+          		<div class="icon d-flex align-items-center justify-content-center">
+          			<span class="icon-globe"></span>
+          		</div>
+          		<h3 class="mb-4">Download Form</h3>
+	            <p><a href="https://drive.google.com/file/d/1SuARWoDofnqWiCEsmXIkdZyhKcX7ujEk/view?usp=sharing">Application Form</a></p>
+	          </div>
+          </div>
+
+		  <div class="container">
+			<br>
+			<br>
+			<div class="row justify-content-center">
+				<div class="col-md-7 ftco-animate text-center">
+					<h2>Have a<span> Question?  </span> <a href="https://forms.gle/SFcV8vvMXPerists5" class="btn btn-primary py-3 px-5">Click Here</a> </h2>
+				</div>
+			</div>
+				<br>
+					<ul class="ftco-footer-social list-unstyled d-flex justify-content-center align-items-center mb-0">
+					  <li class="ftco-animate normal-txt">Find me on  </li>
+					  <li class="ftco-animate"><a href="https://www.youtube.com/@Jupman-art/videos"><span class="icon-youtube"></span></a></li>
+					  <li class="ftco-animate"><a href="https://www.linkedin.com/in/gurdit-singh-8a295a150/"><span class="icon-linkedin"></span></a></li>  
+	
+					  
+					</ul>
+				<br>
+		   </div>
+   </div>
+ </section>
+
+
+ 
+	
+    <footer class="ftco-footer ftco-section">
+		<div class="container">
+		  <div class="row">
+			<div class="col-md-12 text-center">
+  
+				<p>&copy; 2024 Precision Physician Allocation System. All rights reserved.</p>
+			</div>
+		  </div>
+		</div>
+	  </footer>
+
+
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.easing.1.3.js"></script>
+  <script src="js/jquery.waypoints.min.js"></script>
+  <script src="js/jquery.stellar.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/jquery.animateNumber.min.js"></script>
+  <script src="js/scrollax.min.js"></script>
+  
+  <script src="js/main.js"></script>
+    
+  </body>
+</html>

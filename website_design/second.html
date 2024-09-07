@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pregnancy Awareness</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f6d8e8, #fff0e6);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            background-color: #ff80ab;
+            color: #fff;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            padding: 15px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+
+        .navbar a:hover {
+            color: #ff80ab;
+            background-color: #fff;
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        /* Header Styles */
+        .header {
+            position: relative;
+            text-align: center;
+            padding: 30px 0;
+            color: #fff;
+            background-image: url('https://source.unsplash.com/1600x900/?pregnancy,baby');
+            background-size: cover;
+            background-position: center;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 128, 171, 0.7);
+            z-index: 0;
+        }
+
+        .header h1 {
+            font-size: 3.5rem;
+            animation: slideIn 1s ease-in-out;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header p {
+            font-size: 1.8rem;
+            animation: fadeIn 2s ease-in-out 1s forwards;
+            opacity: 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Introduction Section Styles */
+        .introduction {
+            padding: 80px 0;
+            text-align: center;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin: 60px 20px;
+        }
+
+        .introduction h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            position: relative;
+            color: #ff80ab;
+        }
+
+        .introduction p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            animation: textPopUp 1s ease-in-out;
+        }
+
+        .introduction::before {
+            content: '';
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            width: 80px;
+            height: 80px;
+            background: url('https://source.unsplash.com/80x80/?baby') center/cover no-repeat;
+            border-radius: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        @keyframes textPopUp {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Effects of Pregnancy Styles */
+        .effects {
+            text-align: center;
+            padding: 80px 0;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin: 60px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .effects h2 {
+            position:relative;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #ff80ab;
+        }
+
+        .effects p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            animation: textPopUp 1s ease-in-out;
+            
+        }
+
+        .effects ul {
+            list-style-type: none;
+            padding: 10px;
+            display:inline-block;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 0;
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .effects ul li {
+            background: #ffe3eb;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            animation: effectFadeIn 0.6s ease-out;
+            display: flex;
+            flex-direction:column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .effects ul li:hover {
+            transform: translateY(-10px);
+            background-color: #ffccde;
+        }
+
+        @keyframes effectFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .effects img {
+            max-width: 50%;
+            height: auto;
+            display: block;
+            margin: 30px auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Chasing Pregnancy Health Styles */
+        .chasing-health {
+            text-align: center;
+            padding: 80px 0;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin: 60px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .chasing-health h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #ff80ab;
+        }
+
+        .chasing-health p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            animation: textPopUp 1s ease-in-out;
+            
+        }
+
+        .chasing-health .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            width: 100%;
+            max-width: 800px;
+            
+        }
+
+        .chasing-health .card {
+            background-color: #ffe3eb;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            animation: cardPopIn 0.6s ease-out;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .chasing-health .card:hover {
+            transform: translateY(-10px);
+            background-color: #ffccde;
+        }
+
+        .chasing-health .card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .chasing-health .card p {
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+
+        @keyframes cardPopIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Visual Content Styles */
+        .visual-content {
+            padding: 80px 0;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin: 60px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .visual-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #ff80ab;
+        }
+
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .image-gallery img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .image-gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        .video-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .video-gallery video {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Social Media Content Styles */
+        .social-media {
+            text-align: center;
+            padding: 80px 0;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin: 60px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .social-media h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #ff80ab;
+        }
+
+        .social-media p {
+            font-size: 1.2rem;
+            text-align: center;
+            margin-bottom: 30px;
+            max-width: 800px;
+        }
+
+        .social-media ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 0;
+        }
+
+        .social-media li {
+            margin: 0 10px;
+        }
+
+        .social-media a {
+            text-decoration: none;
+            color: #e91e63;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            padding: 10px 15px;
+            border-radius: 5px;
+            background-color: #ffe3eb;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .social-media a:hover {
+            color: #fff;
+            background-color: #ff80ab;
+        }
+
+        /* Footer Styles */
+        .footer {
+            background-color: #ff80ab;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 60px;
+        }
+
+        .footer p {
+            margin: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5rem;
+            }
+
+            .header p {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .header p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="navbar-brand">Home</a>
+            <div class="navbar-links">
+                <a href="#introduction">Introduction</a>
+                <a href="#effects">Effects</a>
+                <a href="#chasing-health">Health Tips</a>
+                <a href="#visual-content">Visuals</a>
+                <a href="#social-media">Social Media</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="header" id="home">
+        <div class="container">
+            <h1>Welcome to Pregnancy Awareness</h1>
+            <p>Empowering, Nurturing, and Supporting</p>
+        </div>
+    </header>
+
+    <!-- Introduction Section -->
+    <section class="introduction" id="introduction">
+        <div class="container">
+            <h2>Introduction</h2>
+            <p>Pregnancy is a beautiful and transformative journey that affects both the body and mind. It is a time of
+                excitement, anticipation, and preparation for welcoming a new life. Understanding pregnancy's physical
+                and emotional changes is key to a healthy and joyful experience.</p>
+        </div>
+    </section>
+
+    <!-- Effects of Pregnancy -->
+    <section class="effects" id="effects">
+        <div class="container">
+            <h2>Effects of Pregnancy</h2>
+            <p>Pregnancy brings a myriad of changes that impact both the physical and emotional well-being of expectant
+                mothers. Some common effects include:</p>
+            <ul>
+                <li>
+                    <h3>Morning Sickness</h3>
+                    <p>Experience nausea and vomiting, especially in the first trimester.</p>
+                </li>
+                <li>
+                    <h3>Mood Swings</h3>
+                    <p>Fluctuating hormones can lead to emotional sensitivity.</p>
+                </li>
+                <li>
+                    <h3>Body Aches</h3>
+                    <p>Increased weight can cause backaches and body discomfort.</p>
+                </li>
+                <li>
+                    <h3>Appetite Changes</h3>
+                    <p>Changes in appetite and cravings are common.</p>
+                </li>
+                <li>
+                    <h3>Increased Heart Rate</h3>
+                    <p>The heart works harder to support the growing baby.</p>
+                </li>
+            </ul>
+            <img src="images/pregnancy/imageforth.webp" alt="Effects of Pregnancy">
+        </div>
+    </section>
+
+    <!-- Chasing Pregnancy Health -->
+    <section class="chasing-health" id="chasing-health">
+        <div class="container">
+            <h2>Health Tips for a Smooth Pregnancy</h2>
+            <p>Maintaining a healthy pregnancy involves mindful practices and lifestyle adjustments. Here are some
+                effective strategies:</p>
+            <div class="card-container">
+                <div class="card">
+                    <h3>Balanced Nutrition</h3>
+                    <p>Eat a balanced diet rich in vitamins and minerals to support fetal development.</p>
+                </div>
+                <div class="card">
+                    <h3>Regular Exercise</h3>
+                    <p>Engage in gentle exercise like walking or prenatal yoga to keep fit.</p>
+                </div>
+                <div class="card">
+                    <h3>Stay Hydrated</h3>
+                    <p>Drink plenty of water to stay hydrated and maintain amniotic fluid levels.</p>
+                </div>
+                <div class="card">
+                    <h3>Prenatal Care</h3>
+                    <p>Attend regular prenatal check-ups to monitor health and baby's growth.</p>
+                </div>
+                <div class="card">
+                    <h3>Stress Management</h3>
+                    <p>Practice relaxation techniques and seek support to manage stress.</p>
+                </div>
+            </div>
+            <img src="images/pregnancy/imageslast.webp" alt="Pregnancy Health Tips">
+        </div>
+    </section>
+
+    <!-- Visual Content -->
+    <section class="visual-content" id="visual-content">
+        <div class="container">
+            <h2>Visual Content</h2>
+            <div class="image-gallery">
+                <img src="images/pregnancy/imagesone.jpeg" alt="Pregnancy Nutrition">
+                <img src="images/pregnancy/imagesecond.jpeg" alt="Prenatal Yoga">
+                <img src="images/pregnancy/imagethird.jpeg" alt="Family Support During Pregnancy">
+            </div>
+            <div class="video-gallery">
+                <video controls>
+                    <source src="images/pregnancy/07_usa_day_4_348_walking_couple.mov" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <video controls>
+                    <source src="images/pregnancy/5853203-uhd_4096_2160_25fps.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Media Content -->
+    <section class="social-media" id="social-media">
+        <div class="container">
+            <h2>Social Media Content</h2>
+            <p>Connect with these supportive communities and influencers for pregnancy tips and inspiration:</p>
+            <ul>
+                <li><a href="https://twitter.com/pregnancy" target="_blank">Pregnancy Twitter</a></li>
+                <li><a href="https://www.facebook.com/pregnancy" target="_blank">Pregnancy Facebook</a></li>
+                <li><a href="https://www.instagram.com/pregnancy" target="_blank">Pregnancy Instagram</a></li>
+                <li><a href="https://www.linkedin.com/pregnancy" target="_blank">Pregnancy LinkedIn</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Pregnancy Awareness. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+<!-- templates/dashboard/home.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chatbot Dashboard</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .navbar {
+            background-color: #005eb8;
+        }
+        .navbar-brand {
+            color: white;
+        }
+        .chatbot-container {
+            margin-top: 20px;
+        }
+        .chatbox {
+            border: 1px solid #ddd;
+            padding: 20px;
+            background: white;
+        }
+        .message {
+            margin-bottom: 10px;
+        }
+        .message.user {
+            text-align: right;
+        }
+        .message.bot {
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#">NHS-like Chatbot Dashboard</a>
+    </nav>
+    <div class="container chatbot-container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="chatbox">
+                    <div id="chat-log">
+                        <div class="message bot">Hello! How can I assist you today?</div>
+                        <div class="message bot">Hello! How can I assist you tomoday?</div>
+                    </div>
+                    <input type="text" id="user-input" class="form-control" placeholder="Type your message here...">
+                    <button id="send-btn" class="btn btn-primary mt-2">Send</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById('send-btn').addEventListener('click', function() {
+            let userInput = document.getElementById('user-input').value;
+            let chatLog = document.getElementById('chat-log');
+            if (userInput.trim() !== '') {
+                let userMessage = document.createElement('div');
+                userMessage.className = 'message user';
+                userMessage.innerText = userInput;
+                chatLog.appendChild(userMessage);
+                
+                // Simulate a bot response
+                let botMessage = document.createElement('div');
+                botMessage.className = 'message bot';
+                botMessage.innerText = "I'm a bot, here to help!";
+                chatLog.appendChild(botMessage);
+
+                // Clear the input
+                document.getElementById('user-input').value = '';
+            }
+        });
+    </script>
+</body>
+</html>
